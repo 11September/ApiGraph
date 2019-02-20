@@ -2,11 +2,12 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends \TCG\Voyager\Models\User
 {
     use Notifiable;
 
@@ -15,8 +16,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    protected $table = "users";
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'type', 'token'
     ];
 
     /**
@@ -36,4 +40,30 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', '=', 'active');
+    }
+
+    public function changeToken()
+    {
+        return $this->token = Hash::make(time());
+    }
+
+    public function deletePlayerId()
+    {
+        return $this->player_id = null;
+    }
+
+    public function email()
+    {
+        return $this->email;
+    }
+
+    public function getUserToken()
+    {
+        return $this->token;
+    }
 }

@@ -18,7 +18,8 @@ use Illuminate\Http\Request;
 //});
 
 Route::middleware('cors')->post('login', 'UsersController@login')->name('Login');
+Route::middleware('cors')->post('register', 'UsersController@register')->name('Register');
 
-Route::middleware('cors','token')->get('post/{id}', 'PostsController@show')->name('Get Post');
-Route::middleware('cors','token')->get('schedules/{school_id}', 'SchedulesController@index')->name('Get Schedules');
-Route::middleware('cors','token')->get('nutritions/{school_id}', 'NutritionsController@index')->name('Get Nutritions');
+Route::middleware('cors','token')->get('activities/{userId}', 'ActivityController@show')->name('Get Activities by User');
+Route::middleware('cors','token')->get('records/{activityId}', 'RecordsController@show')->name('Get Records by Activity');
+Route::middleware('cors','token')->post('records/{id}', 'RecordsController@updateOrStore')->name('Records store');
