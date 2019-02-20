@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\Mail\ResetPassword;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Log;
@@ -30,11 +29,6 @@ class UsersController extends Controller
         try {
             $user = User::where('email', $request->email)->first();
             if ($user) {
-
-                if ($user->status == "disable" || $user->type == "admin" || $user->status == "disable") {
-                    return response()->json(['message' => 'Користувач неактивний!'], 403);
-                }
-
                 if (Hash::check($request->password, $user->password)) {
                     if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
 
@@ -44,13 +38,8 @@ class UsersController extends Controller
                         $user->changeToken();
                         $user->save();
 
-                        if (!$user->avatar || empty($user->avatar)) {
-                            $avatar = null;
-                        } else {
-                            $avatar = Config::get('app.url') . $user->avatar;
-                        }
-
                         $result = array();
+                        $result = array_add($result, 'token', $user->name);
                         $result = array_add($result, 'token', $user->token);
                         $result = array_add($result, 'email', $user->email);
 
@@ -87,12 +76,15 @@ class UsersController extends Controller
             $input = $request->all();
             $input['password'] = Hash::make($input['password']);
             $user = User::create($input);
-            $success['token'] = $user->createToken('MyApp')->accessToken;
-            $success['name'] = $user->name;
-            return response()->json(['success' => $success], $this->successStatus);
 
+            $result = array();
+            $result = array_add($result, 'token', $user->name);
+            $result = array_add($result, 'token', $user->token);
+            $result = array_add($result, 'email', $user->email);
+
+            return response($result);
         } catch (\Exception $exception) {
-            Log::warning('UsersController@login Exception: ' . $exception->getMessage() . "Line - " . $exception->getLine());
+            Log::warning('UsersController@register Exception: ' . $exception->getMessage() . "Line - " . $exception->getLine());
             return response()->json(['message' => 'Упс! Щось пішло не так!'], 500);
         }
     }
@@ -103,7 +95,6 @@ class UsersController extends Controller
         try {
             $user = User::where('token', '=', $request->header('x-auth-token'))->first();
             $user->changeToken();
-            $user->deletePlayerId();
             $user->save();
 
             Auth::logout();

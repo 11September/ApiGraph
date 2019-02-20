@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
-    public function show()
+    public function index()
     {
-        return true;
+        $activities = Activity::all();
+
+        return response()->json(['data' => $activities], 200);
     }
 }
