@@ -39,9 +39,9 @@ class UsersController extends Controller
                         $user->save();
 
                         $result = array();
-                        $result = array_add($result, 'token', $user->name);
-                        $result = array_add($result, 'token', $user->token);
+                        $result = array_add($result, 'name', $user->name);
                         $result = array_add($result, 'email', $user->email);
+                        $result = array_add($result, 'token', $user->token);
 
                         return response($result);
                     } else {
@@ -73,14 +73,17 @@ class UsersController extends Controller
                 return response()->json(['message' => 'Дані в запиті не заповнені або не вірні!'], 400);
             }
 
-            $input = $request->all();
-            $input['password'] = Hash::make($input['password']);
-            $user = User::create($input);
+            $user = new User();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = Hash::make($request->password);
+            $user->token = Hash::make(time());
+            $user->save();
 
             $result = array();
-            $result = array_add($result, 'token', $user->name);
-            $result = array_add($result, 'token', $user->token);
+            $result = array_add($result, 'name', $user->name);
             $result = array_add($result, 'email', $user->email);
+            $result = array_add($result, 'token', $user->token);
 
             return response($result);
         } catch (\Exception $exception) {
