@@ -19,6 +19,7 @@ use Illuminate\Http\Request;
 
 Route::middleware('cors')->post('login', 'UsersController@login')->name('Login');
 Route::middleware('cors')->post('register', 'UsersController@register')->name('Register');
+Route::middleware('cors','token')->post('logout', 'UsersController@logout')->name('Logout');
 
 Route::middleware('cors','token')->get('activities', 'ActivityController@index')->name('Get Activities by User');
 Route::middleware('cors','token')->get('records/{activityId}', 'RecordsController@show')->name('Get Records by Activity');
