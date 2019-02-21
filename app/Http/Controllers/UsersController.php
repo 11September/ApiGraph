@@ -66,7 +66,6 @@ class UsersController extends Controller
                 'name' => 'required',
                 'email' => 'required|email|max:255',
                 'password' => 'required|string|min:6|max:255',
-                'c_password' => 'required|same:password',
             ]);
 
             if ($validator->fails()) {
