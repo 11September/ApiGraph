@@ -22,5 +22,5 @@ Route::middleware('cors')->post('register', 'UsersController@register')->name('R
 Route::middleware('cors','token')->post('logout', 'UsersController@logout')->name('Logout');
 
 Route::middleware('cors','token')->get('activities', 'ActivityController@index')->name('Get Activities by User');
-Route::middleware('cors','token')->get('records', 'RecordsController@show')->name('Get Records by Activity');
-Route::middleware('cors','token')->post('records', 'RecordsController@updateOrStore')->name('Records store');
+Route::middleware('cors','token')->post('records', 'RecordsController@show')->name('Get Records by Activity');
+Route::middleware('cors','token')->post('records/update', 'RecordsController@updateOrStore')->name('Records store');
