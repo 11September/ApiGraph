@@ -20,8 +20,8 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            <state relative-caret-position="374">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -68,8 +68,8 @@
       <file leaf-file-name="RecordsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecordsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            <state relative-caret-position="306">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
               </folding>
@@ -91,6 +91,16 @@
                 <marker date="1551103009163" expanded="true" signature="384:400" ph="..." />
                 <marker date="1551103009163" expanded="true" signature="407:422" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -405,7 +415,7 @@
       <workItem from="1550820974439" duration="874000" />
       <workItem from="1550847469561" duration="2127000" />
       <workItem from="1551078801725" duration="92000" />
-      <workItem from="1551099111787" duration="6014000" />
+      <workItem from="1551099111787" duration="7180000" />
     </task>
     <task id="LOCAL-00001" summary="** Add middleware and kernel them">
       <created>1550669033484</created>
@@ -505,11 +515,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551105092517</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="** use &quot;activity_id&quot; fix select">
+      <created>1551105138132</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1551105138132</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22040000" />
+    <option name="totallyTimeSpent" value="23206000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -556,7 +573,8 @@
     <MESSAGE value="** api route" />
     <MESSAGE value="** use use Illuminate\Validation\Rule;" />
     <MESSAGE value="** use &quot;activity_id&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="** use &quot;activity_id&quot;" />
+    <MESSAGE value="** use &quot;activity_id&quot; fix select" />
+    <option name="LAST_COMMIT_MESSAGE" value="** use &quot;activity_id&quot; fix select" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -887,28 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="57" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="20" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/activities.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-          <folding>
-            <marker date="1551102174018" expanded="true" signature="9:22" ph="..." />
-            <marker date="1551102174018" expanded="true" signature="34:43" ph="..." />
-            <marker date="1551102174018" expanded="true" signature="284:308" ph="..." />
-            <marker date="1551102174018" expanded="true" signature="397:456" ph="..." />
-            <marker date="1551102174018" expanded="true" signature="462:479" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/RecordsSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -985,16 +981,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/activities.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding>
+            <marker date="1551102174018" expanded="true" signature="9:22" ph="..." />
+            <marker date="1551102174018" expanded="true" signature="34:43" ph="..." />
+            <marker date="1551102174018" expanded="true" signature="284:308" ph="..." />
+            <marker date="1551102174018" expanded="true" signature="397:456" ph="..." />
+            <marker date="1551102174018" expanded="true" signature="462:479" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecordsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        <state relative-caret-position="306">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
           </folding>
