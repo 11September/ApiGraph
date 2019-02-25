@@ -68,8 +68,8 @@
       <file leaf-file-name="RecordsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecordsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state relative-caret-position="391">
+              <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
               </folding>
@@ -405,7 +405,7 @@
       <workItem from="1550820974439" duration="874000" />
       <workItem from="1550847469561" duration="2127000" />
       <workItem from="1551078801725" duration="92000" />
-      <workItem from="1551099111787" duration="5965000" />
+      <workItem from="1551099111787" duration="6014000" />
     </task>
     <task id="LOCAL-00001" summary="** Add middleware and kernel them">
       <created>1550669033484</created>
@@ -498,11 +498,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551105013463</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="** use &quot;activity_id&quot;">
+      <created>1551105092517</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1551105092517</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21991000" />
+    <option name="totallyTimeSpent" value="22040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -548,7 +555,8 @@
     <MESSAGE value="** delete gurbage files&#10;** New filter api records" />
     <MESSAGE value="** api route" />
     <MESSAGE value="** use use Illuminate\Validation\Rule;" />
-    <option name="LAST_COMMIT_MESSAGE" value="** use use Illuminate\Validation\Rule;" />
+    <MESSAGE value="** use &quot;activity_id&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="** use &quot;activity_id&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -985,8 +993,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecordsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        <state relative-caret-position="391">
+          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
           </folding>

@@ -29,7 +29,7 @@ class RecordsController extends Controller
         try {
             $user = User::where('token', '=', $request->header('x-auth-token'))->first();
 
-            $records = Record::where('activity_id', $request->id)->where('user_id', $user->id)->get();
+            $records = Record::where('activity_id', $request->activity_id)->where('user_id', $user->id)->get();
 
             return response()->json(['data' => $records], 200);
 
