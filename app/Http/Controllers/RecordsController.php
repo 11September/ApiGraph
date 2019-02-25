@@ -8,19 +8,28 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Contracts\Validation\Rule;
 
 class RecordsController extends Controller
 {
-    public function show(Request $request, $activityId)
+    public function show(Request $request)
     {
-        if (!$activityId) {
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+            'filter' => [
+                'required',
+                Rule::in(['week', 'month', 'year'])
+            ]
+        ]);
+
+        if ($validator->fails()) {
             return response()->json(['message' => 'Дані в запиті не заповнені або не вірні!'], 400);
         }
 
         try {
             $user = User::where('token', '=', $request->header('x-auth-token'))->first();
 
-            $records = Record::where('activity_id', $activityId)->where('user_id', $user->id)->get();
+            $records = Record::where('activity_id', $request->id)->where('user_id', $user->id)->get();
 
             return response()->json(['data' => $records], 200);
 
