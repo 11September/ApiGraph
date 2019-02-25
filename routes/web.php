@@ -15,7 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('activities', 'ActivityController@activities')->name('activities');
+Route::get('records/{activityId}', 'RecordsController@recordActivity')->name('Get Records by Activity');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

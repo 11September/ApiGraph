@@ -13,4 +13,11 @@ class ActivityController extends Controller
 
         return response()->json(['data' => $activities], 200);
     }
+
+    public function activities()
+    {
+        $activities = Activity::all();
+
+        return view('activities', compact('activities'));
+    }
 }

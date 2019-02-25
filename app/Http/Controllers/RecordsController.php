@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Record;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
@@ -27,6 +28,13 @@ class RecordsController extends Controller
             Log::warning('RecordsController@show Exception: ' . $exception->getMessage());
             return response()->json(['message' => 'Упс! Щось пішло не так!'], 500);
         }
+    }
+
+    public function recordActivity($id)
+    {
+        $records = Record::where('activity_id', $id)->where('user_id', Auth::id())->get();
+
+        return view('records', compact('records'));
     }
 
     public function updateOrStore(Request $request)
