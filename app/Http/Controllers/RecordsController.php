@@ -15,7 +15,7 @@ class RecordsController extends Controller
     public function show(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'id' => 'required',
+            'activity_id' => 'required',
             'filter' => [
                 'required',
                 Rule::in(['week', 'month', 'year'])
