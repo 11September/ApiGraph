@@ -29,7 +29,15 @@ class RecordsController extends Controller
         try {
             $user = User::where('token', '=', $request->header('x-auth-token'))->first();
 
-            $records = Record::where('activity_id', intval($request->activity_id))->where('user_id', $user->id)->get();
+            if ($request->filter == "week"){
+                $records = Record::where('activity_id', $request->activity_id)->where('user_id', $user->id)->latest()->take(7)->get();
+            }
+            elseif ($request->filter == "month"){
+                $records = Record::where('activity_id', $request->activity_id)->where('user_id', $user->id)->latest()->take(30)->get();
+            }else{
+                $records = Record::where('activity_id', $request->activity_id)->where('user_id', $user->id)->get();
+            }
+
 
             return response()->json(['data' => $records], 200);
 

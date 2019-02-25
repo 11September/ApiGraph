@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4930ab5b-7ccc-422d-b546-282dda72d30e" name="Default" comment="">
+    <list default="true" id="4930ab5b-7ccc-422d-b546-282dda72d30e" name="Default" comment="** to int activity_id">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RecordsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RecordsController.php" />
     </list>
@@ -68,8 +68,8 @@
       <file leaf-file-name="RecordsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecordsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="391">
+              <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
               </folding>
@@ -415,7 +415,7 @@
       <workItem from="1550820974439" duration="874000" />
       <workItem from="1550847469561" duration="2127000" />
       <workItem from="1551078801725" duration="92000" />
-      <workItem from="1551099111787" duration="7180000" />
+      <workItem from="1551099111787" duration="7766000" />
     </task>
     <task id="LOCAL-00001" summary="** Add middleware and kernel them">
       <created>1550669033484</created>
@@ -522,11 +522,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551105138132</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="** to int activity_id">
+      <created>1551106912253</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1551106912253</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23206000" />
+    <option name="totallyTimeSpent" value="23792000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -574,7 +581,8 @@
     <MESSAGE value="** use use Illuminate\Validation\Rule;" />
     <MESSAGE value="** use &quot;activity_id&quot;" />
     <MESSAGE value="** use &quot;activity_id&quot; fix select" />
-    <option name="LAST_COMMIT_MESSAGE" value="** use &quot;activity_id&quot; fix select" />
+    <MESSAGE value="** to int activity_id" />
+    <option name="LAST_COMMIT_MESSAGE" value="** to int activity_id" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1011,8 +1019,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecordsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="391">
+          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
           </folding>
