@@ -59,9 +59,9 @@ class RecordsController extends Controller
         try {
             $validator = Validator::make($request->all(), [
                 'record_id' => 'required',
-//                'activity_id' => 'required',
+                'activity_id' => 'required',
                 'value' => 'required',
-//                'date' => 'required',
+                'date' => 'required',
             ]);
 
             if ($validator->fails()) {
@@ -69,7 +69,7 @@ class RecordsController extends Controller
             }
 
             $user = User::where('token', '=', $request->header('x-auth-token'))->first();
-            $record = Record::where('id', $request->id)->first();
+            $record = Record::where('id', $request->record_id)->first();
 
             if (!$record){
                 $record = new Record();
