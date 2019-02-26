@@ -58,10 +58,10 @@ class RecordsController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-                'record_id' => '',
-                'activity_id' => 'required',
+                'record_id' => 'required',
+//                'activity_id' => 'required',
                 'value' => 'required',
-                'date' => 'required',
+//                'date' => 'required',
             ]);
 
             if ($validator->fails()) {
