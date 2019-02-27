@@ -132,8 +132,9 @@ if ($('#ambarchart2').length) {
             "income": 34.1,
             "expenses": 32.9,
             "dashLengthColumn": 5,
-            "alpha": 0.2,
-            "additional": "(projection)"
+            // "alpha": 0.2,
+            "additional": "(projection)",
+            "color": "#f0171f"
         }],
         "valueAxes": [{
             "axisAlpha": 0,

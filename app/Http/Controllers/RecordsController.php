@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Record;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -29,12 +31,11 @@ class RecordsController extends Controller
         try {
             $user = User::where('token', '=', $request->header('x-auth-token'))->first();
 
-            if ($request->filter == "week"){
+            if ($request->filter == "week") {
                 $records = Record::where('activity_id', $request->activity_id)->where('user_id', $user->id)->latest()->take(7)->get();
-            }
-            elseif ($request->filter == "month"){
+            } elseif ($request->filter == "month") {
                 $records = Record::where('activity_id', $request->activity_id)->where('user_id', $user->id)->latest()->take(30)->get();
-            }else{
+            } else {
                 $records = Record::where('activity_id', $request->activity_id)->where('user_id', $user->id)->get();
             }
 
@@ -49,7 +50,15 @@ class RecordsController extends Controller
 
     public function recordActivity($id)
     {
-        $records = Record::where('activity_id', $id)->where('user_id', Auth::id())->get();
+        $records = Record::where('activity_id', $id)->where('user_id', Auth::id())
+            ->whereBetween('date', [now()->subMonth(12), now()])
+            ->orderBy('date')
+            ->get()
+            ->groupBy(function ($val) {
+                return Carbon::parse($val->date)->format('Y');
+            });
+
+//        dd($records->first());
 
         return view('records', compact('records'));
     }
@@ -71,13 +80,13 @@ class RecordsController extends Controller
             $user = User::where('token', '=', $request->header('x-auth-token'))->first();
             $record = Record::where('id', $request->record_id)->first();
 
-            if (!$record){
+            if (!$record) {
                 $record = new Record();
                 $record->activity_id = $request->activity_id;
                 $record->user_id = $user->id;
                 $record->value = $request->value;
                 $record->date = $request->date;
-            }else{
+            } else {
                 $record->value = $request->value;
                 $record->save();
             }
